@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS `cpt103`
+DEFAULT CHARACTER SET utf8mb4
+DEFAULT COLLATE utf8mb4_general_ci;
+
+USE `cpt103`;
+
+DROP TABLE IF EXISTS grades ;
+-- DROP TABLE IF EXISTS 
+--
+CREATE TABLE IF NOT EXISTS grades
+(
+`name` VARCHAR(50) NOT NULL,
+`Code` VARCHAR(10) NOT NULL,
+`Mark` SMALLINT UNSIGNED NOT NULL DEFAULT 0
+);
+
+INSERT INTO grades (name, code, mark)
+VALUES
+('Alice', 'CPT103', 80),
+('Bob', 'CPT103', 90),
+('Charlie', 'CPT103', 70),
+('David', 'CPT103', 60),
+('Eva', 'CPT103', 50);
+
+SELECT * FROM grades
+ORDER BY mark DESC;
+
+SELECT * FROM grades
+ORDER BY mark ASC;
